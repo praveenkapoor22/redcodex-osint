@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Social Media Intelligence",
+    "tools": [
+      {
+        "name": "Twitter Advanced Search",
+        "url": "https://twitter.com/search-advanced",
+        "description": "Advanced Twitter OSINT"
+      }
+    ]
+  },
+  {
+    "category": "Domain Intelligence",
+    "tools": [
+      {
+        "name": "WHOIS Lookup",
+        "url": "https://who.is",
+        "description": "Domain ownership details"
+      }
+    ]
+  }
+]

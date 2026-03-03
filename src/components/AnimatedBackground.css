@@ -1,0 +1,51 @@
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #0b0f14;
+  overflow: hidden;
+}
+
+/* Moving grid lines */
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    linear-gradient(rgba(255, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 20s linear infinite;
+}
+
+/* Subtle glow pulse */
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,0,0,0.08), transparent 70%);
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes moveGrid {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-40px, -40px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}

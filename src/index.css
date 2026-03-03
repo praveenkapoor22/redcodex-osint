@@ -1,0 +1,448 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(
+    circle at top left,
+    #0d1117 0%,
+    #0b0f14 40%,
+    #06080c 100%
+  );
+  color: #c9d1d9;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f14;
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* =====================================================
+   SVG BASE
+===================================================== */
+svg {
+  shape-rendering: geometricPrecision;
+  font-family: inherit;
+}
+
+svg text {
+  user-select: none;
+}
+
+/* =====================================================
+   TREE LINKS
+===================================================== */
+.tree-link {
+  stroke: #30363d;
+  stroke-width: 1.5;
+  fill: none;
+  transition: stroke 0.3s ease, opacity 0.3s ease;
+}
+
+.tree-link-light {
+  stroke: #2f353d;
+  stroke-width: 1.2;
+  fill: none;
+}
+
+.tree-link:hover,
+.tree-link-light:hover {
+  stroke: #e10600;
+}
+
+/* =====================================================
+   ROOT NODE
+===================================================== */
+.root-node {
+  fill: #e10600;
+  filter: drop-shadow(0 0 15px rgba(225, 6, 0, 0.8));
+}
+
+.root-text {
+  fill: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* =====================================================
+   NODE CARDS
+===================================================== */
+.node-card {
+  fill: #161b22;
+  stroke: #30363d;
+  transition: all 0.25s ease;
+}
+
+.node-card:hover {
+  stroke: #e10600;
+  filter: drop-shadow(0 0 10px rgba(225, 6, 0, 0.6));
+}
+
+.node-text {
+  fill: #c9d1d9;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.node-text.small {
+  font-size: 12px;
+}
+
+.highlight {
+  stroke: #e10600 !important;
+  stroke-width: 2;
+}
+
+/* =====================================================
+   PULSE ANIMATION
+===================================================== */
+.pulse {
+  animation: pulseGlow 1.4s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(225, 6, 0, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(225, 6, 0, 0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 rgba(225, 6, 0, 0));
+  }
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+input {
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+input::placeholder {
+  color: #8b949e;
+}
+
+input:focus {
+  outline: none;
+  border-color: #e10600;
+  box-shadow: 0 0 0 1px rgba(225, 6, 0, 0.4);
+}
+
+/* =====================================================
+   RESET BUTTON
+===================================================== */
+.reset-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+  padding: 6px 10px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.reset-btn:hover {
+  border-color: #e10600;
+  box-shadow: 0 0 8px rgba(225, 6, 0, 0.6);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  border-top: 1px solid #30363d;
+  padding: 12px 40px;
+  font-size: 11px;
+  color: #6e7681;
+}
+
+/* =====================================================
+   ADMIN PANEL
+===================================================== */
+.admin-container {
+  min-height: 100vh;
+  padding: 40px;
+  background: radial-gradient(circle at top left, #111827, #05070c);
+  color: #e5e7eb;
+}
+
+.admin-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #e10600;
+  text-shadow: 0 0 12px rgba(225, 6, 0, 0.5);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.admin-card {
+  background: rgba(22, 27, 34, 0.7);
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  transition: 0.3s ease;
+}
+
+.admin-card:hover {
+  border-color: #e10600;
+  box-shadow: 0 0 25px rgba(225, 6, 0, 0.3);
+}
+
+/* =====================================================
+   TOOL PANEL
+===================================================== */
+.tool-panel {
+  position: fixed;
+  right: 40px;
+  top: 140px;
+  width: 340px;
+  padding: 22px;
+  border-radius: 14px;
+  background: rgba(12, 16, 22, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(225, 6, 0, 0.25);
+  box-shadow:
+    0 0 30px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(225, 6, 0, 0.08);
+  z-index: 50;
+  animation: panelSlide 0.25s ease-out;
+}
+
+.tool-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.tool-panel-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff3c3c;
+}
+
+.tool-panel-header button {
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tool-panel-header button:hover {
+  color: #e10600;
+  transform: scale(1.1);
+}
+
+.tool-panel p {
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.tool-link-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(90deg, #e10600, #ff3c3c);
+  color: white;
+  transition: 0.25s ease;
+}
+
+.tool-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(225, 6, 0, 0.4);
+}
+
+@keyframes panelSlide {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tool-meta {
+  margin-bottom: 14px;
+}
+
+.tool-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 20px;
+  background: rgba(225, 6, 0, 0.15);
+  border: 1px solid rgba(225, 6, 0, 0.4);
+  color: #ff4d4d;
+}
+
+.tool-description {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: #c9d1d9;
+}
+
+.tool-social {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.tool-social a {
+  margin-left: 10px;
+  color: #e10600;
+  text-decoration: none;
+}
+
+/* ================= SHARE SECTION ================= */
+
+.tool-share {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #8b949e;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.share-icon {
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.2s ease;
+  color: #8b949e;
+}
+
+.share-icon:hover {
+  color: #e10600;
+  transform: scale(1.2);
+}
+
+/* ================= FEEDBACK SECTION ================= */
+
+.tool-feedback {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.feedback-link {
+  display: inline-block;
+  margin-top: 6px;
+  text-decoration: none;
+  color: #e10600;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.feedback-link:hover {
+  text-decoration: underline;
+}
+
+.tool-updates,
+.tool-feedback {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.tool-updates h4,
+.tool-feedback h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #ff3c3c;
+}
+
+.update-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.update-links a,
+.feedback-link {
+  text-decoration: none;
+  font-size: 12px;
+  color: #8b949e;
+  transition: 0.2s ease;
+}
+
+.update-links a:hover,
+.feedback-link:hover {
+  color: #e10600;
+}
+
+/* ================= MINI MAP ================= */
+
+.mini-map {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 220px;
+  height: 140px;
+  background: rgba(12,16,22,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(225,6,0,0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.mini-map svg {
+  pointer-events: none;
+}
