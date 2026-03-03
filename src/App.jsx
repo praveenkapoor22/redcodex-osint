@@ -217,7 +217,7 @@ export default function App() {
     }}
   >
     <a
-      href="https://github.com/YOURUSERNAME"
+      href="https://github.com/praveenkapoor22/redcodex-osint"
       target="_blank"
       rel="noreferrer"
       style={{ display: "flex" }}
@@ -231,7 +231,7 @@ export default function App() {
     </a>
 
     <a
-      href="https://linkedin.com/in/YOURUSERNAME"
+      href="https://linkedin.com/in/praveenkapoor22"
       target="_blank"
       rel="noreferrer"
       style={{ display: "flex" }}
@@ -245,7 +245,7 @@ export default function App() {
     </a>
 
     <a
-      href="https://twitter.com/YOURUSERNAME"
+      href="https://x.com/praveenkapoor22"
       target="_blank"
       rel="noreferrer"
       style={{ display: "flex" }}
