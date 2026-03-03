@@ -35,20 +35,6 @@ RedcodeX OSINT is designed for cybersecurity researchers, investigators, journal
 
 ---
 
-## 📂 Project Structure
-
-```
-src/
- ├── components/
- ├── data/
- │    └── tools.json
- ├── config/
- ├── styles/
- └── main.jsx
-```
-
----
-
 ## 🎯 Purpose
 
 This project aims to:
